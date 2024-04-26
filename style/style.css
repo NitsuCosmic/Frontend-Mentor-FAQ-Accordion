@@ -1,0 +1,127 @@
+* {
+  font-family: "Work Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(275, 100%, 97%);
+	background-image: url("../assets/images/background-pattern-mobile.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	min-height: 100lvh;
+}
+
+main {
+	padding: 2rem;
+}
+
+.faqs {
+  font-size: 16px;
+	padding: 2rem 2rem 1rem;
+	background-color: hsl(0, 0%, 100%);
+	border-radius: 1rem;
+	-webkit-box-shadow: 16px 16px 48px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 16px 16px 48px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 16px 16px 48px 0px rgba(0, 0, 0, 0.2);
+  max-width: 580px;
+}
+
+.faqs__header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.faqs__header__icon {
+  max-width: 1.5rem;
+}
+
+.faqs__header__title {
+  font-size: 2em;
+}
+
+.accordion {
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+.accordion:last-child {
+  border: none;
+}
+
+.accordion__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.accordion__btn:hover > .accordion__btn__title {
+  color: hsl(281, 83%, 54%);
+}
+
+.accordion__btn__title {
+  font-size: 1em;
+  font-weight: 600;
+  padding-right: 2rem;
+  text-align: start;
+  transition: .25s ease-in-out;
+}
+
+.accordion__panel {
+  opacity: 0;
+  transition: all .25s ease;
+}
+
+.accordion__panel.active {
+  opacity: 1;
+  margin-bottom: 1rem;
+}
+
+.accordion__panel > p {
+  max-height: 0;
+  opacity: 0;
+  scale: 0;
+  color: hsl(292, 16%, 49%);
+}
+
+.accordion__panel.active > p {
+  max-height: 100%;
+  opacity: 1;
+  scale: 1;
+}
+
+.attribution {
+	padding: 1rem;
+	font-size: 1rem;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 720px) {
+  body  {
+    background-image: url("../assets/images/background-pattern-desktop.svg");
+  }
+
+  .faqs__header__icon {
+    max-width: initial;
+  }
+
+  .faqs__header__title {
+    font-size: 3.25em;
+  }
+
+  .accordion__btn__title {
+    font-size: 1.1em;
+  }
+}
